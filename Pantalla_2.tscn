@@ -1,0 +1,173 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Personatge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Base1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Pantalla_2.gd" type="Script" id=3]
+[ext_resource path="res://White puff/whitePuff04.png" type="Texture" id=4]
+[ext_resource path="res://White puff/whitePuff05.png" type="Texture" id=5]
+[ext_resource path="res://White puff/whitePuff07.png" type="Texture" id=6]
+[ext_resource path="res://White puff/whitePuff02.png" type="Texture" id=7]
+[ext_resource path="res://White puff/whitePuff00.png" type="Texture" id=8]
+[ext_resource path="res://White puff/whitePuff03.png" type="Texture" id=9]
+[ext_resource path="res://White puff/whitePuff06.png" type="Texture" id=10]
+[ext_resource path="res://White puff/whitePuff01.png" type="Texture" id=11]
+[ext_resource path="res://White puff/whitePuff18.png" type="Texture" id=12]
+[ext_resource path="res://White puff/whitePuff11.png" type="Texture" id=13]
+[ext_resource path="res://White puff/whitePuff16.png" type="Texture" id=14]
+[ext_resource path="res://White puff/whitePuff09.png" type="Texture" id=15]
+[ext_resource path="res://White puff/whitePuff10.png" type="Texture" id=16]
+[ext_resource path="res://White puff/whitePuff08.png" type="Texture" id=17]
+[ext_resource path="res://White puff/whitePuff12.png" type="Texture" id=18]
+[ext_resource path="res://White puff/whitePuff15.png" type="Texture" id=19]
+[ext_resource path="res://White puff/whitePuff17.png" type="Texture" id=20]
+[ext_resource path="res://White puff/whitePuff19.png" type="Texture" id=21]
+[ext_resource path="res://White puff/whitePuff20.png" type="Texture" id=22]
+[ext_resource path="res://White puff/whitePuff22.png" type="Texture" id=23]
+[ext_resource path="res://White puff/whitePuff24.png" type="Texture" id=24]
+[ext_resource path="res://White puff/whitePuff14.png" type="Texture" id=25]
+[ext_resource path="res://White puff/whitePuff13.png" type="Texture" id=26]
+[ext_resource path="res://White puff/whitePuff21.png" type="Texture" id=27]
+[ext_resource path="res://White puff/whitePuff23.png" type="Texture" id=28]
+[ext_resource path="res://Terra4.tscn" type="PackedScene" id=29]
+[ext_resource path="res://media_sierra.tscn" type="PackedScene" id=30]
+[ext_resource path="res://PNG/ecalera.png" type="Texture" id=31]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 34.2053
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 156, 20 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 42, 173 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Terra" parent="." instance=ExtResource( 2 )]
+position = Vector2( 469, 581 )
+
+[node name="Paret2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1093, 92 )
+rotation = 1.56972
+
+[node name="Sostre" parent="." instance=ExtResource( 2 )]
+position = Vector2( 471, -323 )
+rotation = -1.16415e-10
+
+[node name="Paret1" parent="." instance=ExtResource( 2 )]
+position = Vector2( -53, 90 )
+rotation = 1.56972
+
+[node name="Plataforma1" parent="." instance=ExtResource( 29 )]
+position = Vector2( 189, 492 )
+
+[node name="Plataforma2" parent="." instance=ExtResource( 29 )]
+position = Vector2( 253, 471 )
+
+[node name="Plataforma3" parent="." instance=ExtResource( 29 )]
+position = Vector2( 317, 451 )
+
+[node name="Plataforma4" parent="." instance=ExtResource( 29 )]
+position = Vector2( 509, 451 )
+
+[node name="Plataforma5" parent="." instance=ExtResource( 29 )]
+position = Vector2( 573, 471 )
+
+[node name="Plataforma6" parent="." instance=ExtResource( 29 )]
+position = Vector2( 637, 427 )
+
+[node name="Plataforma7" parent="." instance=ExtResource( 29 )]
+position = Vector2( 701, 394 )
+
+[node name="Plataforma8" parent="." instance=ExtResource( 29 )]
+position = Vector2( 766, 492 )
+
+[node name="media_sierra1" parent="." instance=ExtResource( 30 )]
+position = Vector2( 379, 486 )
+
+[node name="Sierra" type="Area2D" parent="media_sierra1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="media_sierra1/Sierra"]
+position = Vector2( 0, 38 )
+shape = SubResource( 3 )
+
+[node name="media_sierra2" parent="." instance=ExtResource( 30 )]
+position = Vector2( 447, 486 )
+
+[node name="Sierra" type="Area2D" parent="media_sierra2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="media_sierra2/Sierra"]
+position = Vector2( 0, 38 )
+shape = SubResource( 3 )
+
+[node name="media_sierra3" parent="." instance=ExtResource( 30 )]
+position = Vector2( 833, 486 )
+
+[node name="Sierra" type="Area2D" parent="media_sierra3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="media_sierra3/Sierra"]
+position = Vector2( 0, 38 )
+shape = SubResource( 3 )
+
+[node name="media_sierra4" parent="." instance=ExtResource( 30 )]
+position = Vector2( 901, 487 )
+
+[node name="Sierra" type="Area2D" parent="media_sierra4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="media_sierra4/Sierra"]
+position = Vector2( 0, 38 )
+shape = SubResource( 3 )
+
+[node name="Transportador" type="Area2D" parent="."]
+position = Vector2( 853, -220 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportador"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Transportador"]
+modulate = Color( 1, 0.631373, 1, 1 )
+scale = Vector2( 1.05266, 0.151734 )
+frames = SubResource( 2 )
+
+[node name="escala" type="Node2D" parent="."]
+position = Vector2( 980, 350 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="escala"]
+position = Vector2( 0.249998, 10.5 )
+scale = Vector2( 0.140313, 0.109037 )
+texture = ExtResource( 31 )
+
+[node name="Area_escala" type="Area2D" parent="escala"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escala/Area_escala"]
+position = Vector2( 0, -2.24113e-05 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 4 )
+
+[node name="Personatge" parent="." instance=ExtResource( 1 )]
+position = Vector2( 76, 385 )
+
+[node name="Camera2D" type="Camera2D" parent="Personatge"]
+current = true
+
+[connection signal="body_entered" from="media_sierra1/Sierra" to="Personatge" method="_on_Sierra_body_entered"]
+[connection signal="body_entered" from="media_sierra2/Sierra" to="Personatge" method="_on_Sierra_body_entered"]
+[connection signal="body_entered" from="media_sierra3/Sierra" to="Personatge" method="_on_Sierra_body_entered"]
+[connection signal="body_entered" from="media_sierra4/Sierra" to="Personatge" method="_on_Sierra_body_entered"]
+[connection signal="body_entered" from="Transportador" to="Personatge" method="_on_Transortador_body_entered"]
+[connection signal="body_entered" from="escala/Area_escala" to="Personatge" method="_on_Area_escala_body_entered"]
