@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Personatge.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Base1.tscn" type="PackedScene" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://White puff/whitePuff21.png" type="Texture" id=27]
 [ext_resource path="res://White puff/whitePuff23.png" type="Texture" id=28]
 [ext_resource path="res://Pantalla_1.gd" type="Script" id=29]
+[ext_resource path="res://PNG/Backgrounds/blue_land.png" type="Texture" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 156, 55 )
@@ -43,6 +44,11 @@ animations = [ {
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 29 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 511, 107.001 )
+scale = Vector2( 2.21289, 1.41406 )
+texture = ExtResource( 30 )
 
 [node name="Personatge" parent="." instance=ExtResource( 1 )]
 position = Vector2( 76, 385 )
@@ -95,7 +101,7 @@ modulate = Color( 1, 0.631373, 1, 1 )
 position = Vector2( 0, -40.8956 )
 scale = Vector2( 1.05266, 0.364179 )
 frames = SubResource( 2 )
-frame = 14
+frame = 2
 playing = true
 
 [connection signal="body_entered" from="Transportador" to="Personatge" method="_on_Transportador_body_entered"]

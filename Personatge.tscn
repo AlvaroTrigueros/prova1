@@ -34,9 +34,34 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ null ],
+"loop": true,
+"name": "None",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "celebra1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "ajupeix",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "camina",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "llisca",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "salta",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
@@ -52,26 +77,6 @@ animations = [ {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "celebra2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "salta",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "camina",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "ajupeix",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "llisca",
 "speed": 5.0
 } ]
 
@@ -91,7 +96,7 @@ polygon = PoolVector2Array( 1, -32, -22, -21, -20, 9, -25, 36, -19, 39, -22, 54,
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "escala"
+animation = "None"
 
 [node name="nuvol_salt" type="AnimatedSprite" parent="."]
 modulate = Color( 0.392157, 0.27451, 0.141176, 1 )

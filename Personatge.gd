@@ -4,7 +4,7 @@ extends KinematicBody2D
 var velocitat_y = 0
 var velocitat_x = 200
 var salt = 350
-var contador_salts = 0
+var contador_salts = 1
 var velocitat = Vector2(0, 0)
 var accio = ''
 var gravetat = 9.8
@@ -15,8 +15,9 @@ var opcio_doble_salt = true
 var escalant = false
 
 func _physics_process(delta):
-	if is_on_floor():
-		accio = ''
+	mg = multiplicador_gravetat
+
+	accio = ''
 		
 	velocitat.x = 0
 	velocitat.y += gravetat * mg * delta
@@ -40,33 +41,20 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("mou amunt"):
 		if escalant:
-				accio = 'escala'
-				velocitat.y = -100
-				mg = 0
+			accio = 'escala'
+			velocitat.y = -100
+			mg = 0
 		else:
 			if contador_salts == 0:
 				velocitat.y = -salt
-			mg = multiplicador_gravetat
-			$nuvol_salt.frame = 0
-			$nuvol_salt.play('main')
-			
-
-			contador_salts += 1
+				$nuvol_salt.frame = 0
+				$nuvol_salt.play('main')
+				contador_salts += 1
 	
 	if Input.is_action_pressed("mou avall"):
-		if escalant:
-			accio = 'escala'
-			mg = 0
-		else:
-			mg = multiplicador_gravetat
-			accio = 'ajupeix'
-			velocitat.x = 0
-			velocitat.y += 50
-			
-		
-	else:
-		accio = ''
-		
+		accio = 'ajupeix'
+		velocitat.x = 0
+		velocitat.y += 50
 		
 	if abs(velocitat.y) >= 500:
 		velocitat.y = abs(velocitat.y)/velocitat.y * 500
@@ -97,10 +85,10 @@ func anima(speed: Vector2, action):
 		else: 
 			animacio.play('camina')
 	
-	if not is_on_floor() and abs(velocitat.x) > 1 :
+	if not is_on_floor() and abs(velocitat.x) > 1 and not escalant:
 		animacio.play('salta')
 		
-	if action == 'escala':
+	elif action == 'escala' and not is_on_floor():
 		animacio.play('escala')
 		
 	elif abs(speed.x) < 0.1 or is_on_wall(): 
@@ -114,7 +102,6 @@ func _on_Transportador_body_entered(body):
 	get_tree().change_scene('res://Pantalla_2.tscn')
 
 
-
 func _on_Sierra_body_entered(body):
 	if body.name == 'Personatge':
 		get_tree().reload_current_scene()
@@ -123,4 +110,25 @@ func _on_Sierra_body_entered(body):
 func _on_Area_escala_body_entered(body):
 	if body.name == 'Personatge':
 		escalant = true
-	
+		
+
+func _on_Area_escala_body_exited(body):
+	if body.name == 'Personatge':
+		escalant = false
+
+
+func _on_Transportador2_body_entered(body):
+	if body.name == 'Personatge':
+		get_tree().change_scene('res://Pantalla_3.tscn')
+
+
+func _on_abeja_body_entered(body):
+	if body.name == 'Personatge':
+		position = Vector2(72, 390)
+	return
+
+
+func _on_Transportador3_body_entered(body):
+	if body.name == 'Personatge':
+		get_tree().change_scene('res://Pantalla_4.tscn')
+		

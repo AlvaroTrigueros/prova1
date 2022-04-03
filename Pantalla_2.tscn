@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Personatge.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Base1.tscn" type="PackedScene" id=2]
@@ -31,12 +31,14 @@
 [ext_resource path="res://Terra4.tscn" type="PackedScene" id=29]
 [ext_resource path="res://media_sierra.tscn" type="PackedScene" id=30]
 [ext_resource path="res://PNG/ecalera.png" type="Texture" id=31]
+[ext_resource path="res://PNG/Backgrounds/colored_grass.png" type="Texture" id=32]
+[ext_resource path="res://PNG/Ground/Grass/grassHill_right.png" type="Texture" id=33]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 34.2053
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 156, 20 )
+extents = Vector2( 108.04, 19.3726 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -47,10 +49,15 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 42, 173 )
+extents = Vector2( 27.5, 120 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 489.749, 114 )
+scale = Vector2( 2.27979, 1.50879 )
+texture = ExtResource( 32 )
 
 [node name="Terra" parent="." instance=ExtResource( 2 )]
 position = Vector2( 469, 581 )
@@ -91,6 +98,42 @@ position = Vector2( 701, 394 )
 [node name="Plataforma8" parent="." instance=ExtResource( 29 )]
 position = Vector2( 766, 492 )
 
+[node name="Plataforma9" parent="." instance=ExtResource( 29 )]
+position = Vector2( 908, 259 )
+
+[node name="Plataforma10" parent="." instance=ExtResource( 29 )]
+position = Vector2( 729, 217 )
+
+[node name="Plataforma11" parent="." instance=ExtResource( 29 )]
+position = Vector2( 533, 188 )
+
+[node name="Plataforma12" parent="." instance=ExtResource( 29 )]
+position = Vector2( 469, 188 )
+
+[node name="Plataforma13" parent="." instance=ExtResource( 29 )]
+position = Vector2( 279, 122 )
+
+[node name="Plataforma14" parent="." instance=ExtResource( 29 )]
+position = Vector2( 70, 122 )
+
+[node name="Plataforma15" parent="." instance=ExtResource( 29 )]
+position = Vector2( 36, 56 )
+
+[node name="Plataforma16" parent="." instance=ExtResource( 29 )]
+position = Vector2( 246, -42 )
+
+[node name="Plataforma17" parent="." instance=ExtResource( 29 )]
+position = Vector2( 182, -42 )
+
+[node name="CollisionShape2D" parent="Plataforma17" index="0"]
+shape = null
+
+[node name="Sprite" parent="Plataforma17" index="1"]
+texture = ExtResource( 33 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plataforma17"]
+polygon = PoolVector2Array( 32, -32, -32, 32, -32, 34, 31, 34, 32, 34 )
+
 [node name="media_sierra1" parent="." instance=ExtResource( 30 )]
 position = Vector2( 379, 486 )
 
@@ -127,25 +170,27 @@ position = Vector2( 901, 487 )
 position = Vector2( 0, 38 )
 shape = SubResource( 3 )
 
-[node name="Transportador" type="Area2D" parent="."]
-position = Vector2( 853, -220 )
+[node name="Transportador2" type="Area2D" parent="."]
+position = Vector2( 374, -242 )
+rotation = 1.56655
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportador"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportador2"]
+position = Vector2( 47.9599, -0.627472 )
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Transportador"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Transportador2"]
 modulate = Color( 1, 0.631373, 1, 1 )
-scale = Vector2( 1.05266, 0.151734 )
+position = Vector2( 48.7664, -2.92847 )
+scale = Vector2( 0.768908, 0.135543 )
 frames = SubResource( 2 )
+frame = 5
+playing = true
 
 [node name="escala" type="Node2D" parent="."]
 position = Vector2( 980, 350 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="escala"]
 position = Vector2( 0.249998, 10.5 )
@@ -155,12 +200,11 @@ texture = ExtResource( 31 )
 [node name="Area_escala" type="Area2D" parent="escala"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="escala/Area_escala"]
-position = Vector2( 0, -2.24113e-05 )
-scale = Vector2( 1, 1 )
+position = Vector2( 14.5, 53 )
 shape = SubResource( 4 )
 
 [node name="Personatge" parent="." instance=ExtResource( 1 )]
-position = Vector2( 76, 385 )
+position = Vector2( 74, 390 )
 
 [node name="Camera2D" type="Camera2D" parent="Personatge"]
 current = true
@@ -169,5 +213,8 @@ current = true
 [connection signal="body_entered" from="media_sierra2/Sierra" to="Personatge" method="_on_Sierra_body_entered"]
 [connection signal="body_entered" from="media_sierra3/Sierra" to="Personatge" method="_on_Sierra_body_entered"]
 [connection signal="body_entered" from="media_sierra4/Sierra" to="Personatge" method="_on_Sierra_body_entered"]
-[connection signal="body_entered" from="Transportador" to="Personatge" method="_on_Transortador_body_entered"]
+[connection signal="body_entered" from="Transportador2" to="Personatge" method="_on_Transportador2_body_entered"]
 [connection signal="body_entered" from="escala/Area_escala" to="Personatge" method="_on_Area_escala_body_entered"]
+[connection signal="body_exited" from="escala/Area_escala" to="Personatge" method="_on_Area_escala_body_exited"]
+
+[editable path="Plataforma17"]

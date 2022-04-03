@@ -1,0 +1,339 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://Personatge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Base1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Pantalla_2.gd" type="Script" id=3]
+[ext_resource path="res://White puff/whitePuff04.png" type="Texture" id=4]
+[ext_resource path="res://White puff/whitePuff05.png" type="Texture" id=5]
+[ext_resource path="res://White puff/whitePuff07.png" type="Texture" id=6]
+[ext_resource path="res://White puff/whitePuff02.png" type="Texture" id=7]
+[ext_resource path="res://White puff/whitePuff00.png" type="Texture" id=8]
+[ext_resource path="res://White puff/whitePuff03.png" type="Texture" id=9]
+[ext_resource path="res://White puff/whitePuff06.png" type="Texture" id=10]
+[ext_resource path="res://White puff/whitePuff01.png" type="Texture" id=11]
+[ext_resource path="res://White puff/whitePuff18.png" type="Texture" id=12]
+[ext_resource path="res://White puff/whitePuff11.png" type="Texture" id=13]
+[ext_resource path="res://White puff/whitePuff16.png" type="Texture" id=14]
+[ext_resource path="res://White puff/whitePuff09.png" type="Texture" id=15]
+[ext_resource path="res://White puff/whitePuff10.png" type="Texture" id=16]
+[ext_resource path="res://White puff/whitePuff08.png" type="Texture" id=17]
+[ext_resource path="res://White puff/whitePuff12.png" type="Texture" id=18]
+[ext_resource path="res://White puff/whitePuff15.png" type="Texture" id=19]
+[ext_resource path="res://White puff/whitePuff17.png" type="Texture" id=20]
+[ext_resource path="res://White puff/whitePuff19.png" type="Texture" id=21]
+[ext_resource path="res://White puff/whitePuff20.png" type="Texture" id=22]
+[ext_resource path="res://White puff/whitePuff22.png" type="Texture" id=23]
+[ext_resource path="res://White puff/whitePuff24.png" type="Texture" id=24]
+[ext_resource path="res://White puff/whitePuff14.png" type="Texture" id=25]
+[ext_resource path="res://White puff/whitePuff13.png" type="Texture" id=26]
+[ext_resource path="res://White puff/whitePuff21.png" type="Texture" id=27]
+[ext_resource path="res://White puff/whitePuff23.png" type="Texture" id=28]
+[ext_resource path="res://PNG/Enemies/bee.png" type="Texture" id=29]
+[ext_resource path="res://PNG/Enemies/bee_move.png" type="Texture" id=30]
+[ext_resource path="res://PNG/ecalera.png" type="Texture" id=31]
+[ext_resource path="res://PNG/Backgrounds/colored_shroom.png" type="Texture" id=32]
+[ext_resource path="res://abeja.gd" type="Script" id=33]
+[ext_resource path="res://abeja_horizontal.gd" type="Script" id=34]
+[ext_resource path="res://Terra5.tscn" type="PackedScene" id=35]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32, 15 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "aletear",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 20, 131 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5, 83.5 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 77.5148, 5.8705 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 494, 155 )
+scale = Vector2( 2.21729, 1.50879 )
+texture = ExtResource( 32 )
+
+[node name="Terra" parent="." instance=ExtResource( 2 )]
+position = Vector2( 469, 581 )
+
+[node name="Paret2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1093, 92 )
+rotation = 1.56972
+
+[node name="Sostre" parent="." instance=ExtResource( 2 )]
+position = Vector2( 471, -323 )
+rotation = -1.16415e-10
+
+[node name="Paret1" parent="." instance=ExtResource( 2 )]
+position = Vector2( -53, 90 )
+rotation = 1.56972
+
+[node name="Plataforma1" parent="." instance=ExtResource( 35 )]
+position = Vector2( 187, 492 )
+
+[node name="Plataforma2" parent="." instance=ExtResource( 35 )]
+position = Vector2( 299, 465 )
+
+[node name="Plataforma3" parent="." instance=ExtResource( 35 )]
+position = Vector2( 425, 465 )
+
+[node name="Plataforma4" parent="." instance=ExtResource( 35 )]
+position = Vector2( 555, 493 )
+
+[node name="Plataforma5" parent="." instance=ExtResource( 35 )]
+position = Vector2( 708, 317 )
+
+[node name="Plataforma6" parent="." instance=ExtResource( 35 )]
+position = Vector2( 778, 435 )
+
+[node name="Plataforma7" parent="." instance=ExtResource( 35 )]
+position = Vector2( 843, 435 )
+
+[node name="Plataforma8" parent="." instance=ExtResource( 35 )]
+position = Vector2( 908, 435 )
+
+[node name="Plataforma9" parent="." instance=ExtResource( 35 )]
+position = Vector2( 744, 155 )
+
+[node name="Plataforma10" parent="." instance=ExtResource( 35 )]
+position = Vector2( 951, 372 )
+
+[node name="Plataforma11" parent="." instance=ExtResource( 35 )]
+position = Vector2( 992, 307 )
+
+[node name="Plataforma13" parent="." instance=ExtResource( 35 )]
+position = Vector2( 872, 237 )
+
+[node name="CollisionShape2D" parent="Plataforma13" index="0"]
+position = Vector2( 0, -17 )
+disabled = true
+
+[node name="Sprite" parent="Plataforma13" index="1"]
+position = Vector2( 0, -17 )
+scale = Vector2( 0.5, 0.234375 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Plataforma13"]
+position = Vector2( 0, -17 )
+shape = SubResource( 6 )
+
+[node name="Plataforma22" parent="." instance=ExtResource( 35 )]
+position = Vector2( 808, 203 )
+
+[node name="CollisionShape2D" parent="Plataforma22" index="0"]
+position = Vector2( 0, -17 )
+disabled = true
+
+[node name="Sprite" parent="Plataforma22" index="1"]
+position = Vector2( 0, -17 )
+scale = Vector2( 0.5, 0.234375 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Plataforma22"]
+position = Vector2( 0, -17 )
+shape = SubResource( 6 )
+
+[node name="Plataforma14" parent="." instance=ExtResource( 35 )]
+position = Vector2( 680, 120 )
+
+[node name="Plataforma15" parent="." instance=ExtResource( 35 )]
+position = Vector2( 466, 136 )
+
+[node name="Plataforma16" parent="." instance=ExtResource( 35 )]
+position = Vector2( 167, 134 )
+
+[node name="Plataforma17" parent="." instance=ExtResource( 35 )]
+position = Vector2( 36, 67 )
+
+[node name="Plataforma18" parent="." instance=ExtResource( 35 )]
+position = Vector2( 95, -136 )
+
+[node name="Plataforma19" parent="." instance=ExtResource( 35 )]
+position = Vector2( 253, -101 )
+
+[node name="Plataforma20" parent="." instance=ExtResource( 35 )]
+position = Vector2( 479, -112 )
+
+[node name="Plataforma21" parent="." instance=ExtResource( 35 )]
+position = Vector2( 711, -113 )
+
+[node name="abeja1" type="Node2D" parent="."]
+position = Vector2( 316, 461 )
+rotation = 1.56972
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="abeja1"]
+position = Vector2( 47.5617, -44.7627 )
+rotation = -1.56218
+scale = Vector2( 0.294206, 0.262904 )
+frames = SubResource( 5 )
+animation = "aletear"
+playing = true
+
+[node name="abeja" type="Area2D" parent="abeja1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="abeja1/abeja"]
+position = Vector2( 47.7553, -44.3059 )
+scale = Vector2( 0.290491, 0.284307 )
+polygon = PoolVector2Array( -24.0291, 26.9742, -10.0452, 41.9893, 28.5005, 43.4962, 24.9935, 6.02695, 38.8797, -5.73499, 35.4743, -40.912, 3.03981, -36.9967, -25.0065, 5.97314 )
+
+[node name="abeja2" type="Node2D" parent="."]
+position = Vector2( 441, 457 )
+rotation = 1.56972
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="abeja2"]
+position = Vector2( 47.5617, -44.7627 )
+rotation = -1.56218
+scale = Vector2( 0.294206, 0.262904 )
+frames = SubResource( 5 )
+animation = "aletear"
+playing = true
+
+[node name="abeja" type="Area2D" parent="abeja2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="abeja2/abeja"]
+position = Vector2( 47.7553, -44.3059 )
+scale = Vector2( 0.290491, 0.284307 )
+polygon = PoolVector2Array( -24.0291, 26.9742, -10.0452, 41.9893, 28.5005, 43.4962, 24.9935, 6.02695, 38.8797, -5.73499, 35.4743, -40.912, 3.03981, -36.9967, -25.0065, 5.97314 )
+
+[node name="abeja3" type="Node2D" parent="."]
+position = Vector2( 854, 325 )
+rotation = 1.56972
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="abeja3"]
+position = Vector2( 47.5617, -44.7627 )
+rotation = -1.56218
+scale = Vector2( 0.294206, 0.262904 )
+frames = SubResource( 5 )
+animation = "aletear"
+playing = true
+
+[node name="abeja" type="Area2D" parent="abeja3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="abeja3/abeja"]
+position = Vector2( 47.7553, -44.3059 )
+scale = Vector2( 0.290491, 0.284307 )
+polygon = PoolVector2Array( -24.0291, 26.9742, -10.0452, 41.9893, 28.5005, 43.4962, 24.9935, 6.02695, 38.8797, -5.73499, 35.4743, -40.912, 3.03981, -36.9967, -25.0065, 5.97314 )
+
+[node name="abeja4" type="Node2D" parent="."]
+position = Vector2( 208, -63 )
+rotation = 1.56972
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="abeja4"]
+position = Vector2( 47.5617, -44.7627 )
+rotation = -1.56218
+scale = Vector2( 0.294206, 0.262904 )
+frames = SubResource( 5 )
+animation = "aletear"
+frame = 1
+playing = true
+
+[node name="abeja" type="Area2D" parent="abeja4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="abeja4/abeja"]
+position = Vector2( 47.7553, -44.3059 )
+scale = Vector2( 0.290491, 0.284307 )
+polygon = PoolVector2Array( -24.0291, 26.9742, -10.0452, 41.9893, 28.5005, 43.4962, 24.9935, 6.02695, 38.8797, -5.73499, 35.4743, -40.912, 3.03981, -36.9967, -25.0065, 5.97314 )
+
+[node name="escala" type="Node2D" parent="."]
+position = Vector2( 632, 350 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="escala"]
+position = Vector2( 0.249998, 10.5 )
+scale = Vector2( 0.140313, 0.109037 )
+texture = ExtResource( 31 )
+
+[node name="Area_escala" type="Area2D" parent="escala"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escala/Area_escala"]
+position = Vector2( -1, 30 )
+shape = SubResource( 7 )
+
+[node name="escala2" type="Node2D" parent="."]
+position = Vector2( -7, -150 )
+
+[node name="Sprite" type="Sprite" parent="escala2"]
+position = Vector2( 41.2502, 62.5002 )
+scale = Vector2( 0.0890628, 0.0808984 )
+texture = ExtResource( 31 )
+
+[node name="Area_escala" type="Area2D" parent="escala2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escala2/Area_escala"]
+position = Vector2( 33, 71.5 )
+shape = SubResource( 4 )
+
+[node name="Transportador3" type="Area2D" parent="."]
+position = Vector2( 1027, -234 )
+rotation = 1.56655
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Transportador3"]
+modulate = Color( 1, 0.631373, 1, 1 )
+position = Vector2( 81.2632, 16.9458 )
+scale = Vector2( 0.576023, 0.0724535 )
+frames = SubResource( 2 )
+frame = 7
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportador3"]
+position = Vector2( 78.4681, 16.8748 )
+rotation = -4.65661e-10
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Personatge" parent="." instance=ExtResource( 1 )]
+position = Vector2( 74, 390 )
+
+[node name="Camera2D" type="Camera2D" parent="Personatge"]
+current = true
+
+[connection signal="body_entered" from="abeja1/abeja" to="Personatge" method="_on_abeja_body_entered"]
+[connection signal="body_entered" from="abeja2/abeja" to="Personatge" method="_on_abeja_body_entered"]
+[connection signal="body_entered" from="abeja3/abeja" to="Personatge" method="_on_abeja_body_entered"]
+[connection signal="body_entered" from="abeja4/abeja" to="Personatge" method="_on_abeja_body_entered"]
+[connection signal="body_entered" from="escala/Area_escala" to="Personatge" method="_on_Area_escala_body_entered"]
+[connection signal="body_exited" from="escala/Area_escala" to="Personatge" method="_on_Area_escala_body_exited"]
+[connection signal="body_entered" from="escala2/Area_escala" to="Personatge" method="_on_Area_escala_body_entered"]
+[connection signal="body_exited" from="escala2/Area_escala" to="Personatge" method="_on_Area_escala_body_exited"]
+[connection signal="body_entered" from="Transportador3" to="Personatge" method="_on_Transportador3_body_entered"]
+
+[editable path="Plataforma13"]
+[editable path="Plataforma22"]
